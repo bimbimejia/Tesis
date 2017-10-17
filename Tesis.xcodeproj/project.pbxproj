@@ -14,6 +14,7 @@
 		F8A724181F969E1800AEC1AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A724161F969E1800AEC1AE /* LaunchScreen.storyboard */; };
 		F8A724231F969E1800AEC1AE /* TesisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A724221F969E1800AEC1AE /* TesisTests.swift */; };
 		F8A7242E1F969E1800AEC1AE /* TesisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A7242D1F969E1800AEC1AE /* TesisUITests.swift */; };
+		F8A7243D1F96AA2500AEC1AE /* DroneCode.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A7243C1F96AA2500AEC1AE /* DroneCode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		F8A724291F969E1800AEC1AE /* TesisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TesisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A7242D1F969E1800AEC1AE /* TesisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesisUITests.swift; sourceTree = "<group>"; };
 		F8A7242F1F969E1800AEC1AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8A7243B1F96AA2400AEC1AE /* Tesis-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tesis-Bridging-Header.h"; sourceTree = "<group>"; };
+		F8A7243C1F96AA2500AEC1AE /* DroneCode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DroneCode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				F8A724141F969E1800AEC1AE /* Assets.xcassets */,
 				F8A724161F969E1800AEC1AE /* LaunchScreen.storyboard */,
 				F8A724191F969E1800AEC1AE /* Info.plist */,
+				F8A7243C1F96AA2500AEC1AE /* DroneCode.m */,
+				F8A7243B1F96AA2400AEC1AE /* Tesis-Bridging-Header.h */,
 			);
 			path = Tesis;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				TargetAttributes = {
 					F8A724091F969E1800AEC1AE = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					F8A7241D1F969E1800AEC1AE = {
@@ -259,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A7243D1F96AA2500AEC1AE /* DroneCode.m in Sources */,
 				F8A724101F969E1800AEC1AE /* ViewController.swift in Sources */,
 				F8A7240E1F969E1800AEC1AE /* AppDelegate.swift in Sources */,
 			);
@@ -426,11 +433,39 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				"HEADER_SEARCH_PATHS[sdk=iphoneos*]" = "./arsdk-ios/staging/usr/include";
+				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "./arsdk-ios_sim/staging/usr/include";
 				INFOPLIST_FILE = Tesis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = "./arsdk-ios/staging/usr/lib";
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = "./arsdk-ios_sim/staging/usr/lib";
+				OTHER_LDFLAGS = (
+					"-larcommands",
+					"-larcontroller",
+					"-lardiscoverywithouteacc",
+					"-larnetwork",
+					"-larnetworkal",
+					"-larsal",
+					"-larstream",
+					"-larstream2",
+					"-larmavlink",
+					"-ljson",
+					"-larmedia",
+					"-larutils",
+					"-lcurl",
+					"-lardatatransfer",
+					"-lmux",
+					"-lpomp",
+					"-lcrypto",
+					"-lssl",
+					"-lz",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ident.Tesis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tesis/Tesis-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -440,11 +475,38 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				"HEADER_SEARCH_PATHS[sdk=iphoneos*]" = "./arsdk-ios/staging/usr/include";
+				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "./arsdk-ios_sim/staging/usr/include";
 				INFOPLIST_FILE = Tesis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = "./arsdk-ios/staging/usr/lib";
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = "./arsdk-ios_sim/staging/usr/lib";
+				OTHER_LDFLAGS = (
+					"-larcommands",
+					"-larcontroller",
+					"-lardiscoverywithouteacc",
+					"-larnetwork",
+					"-larnetworkal",
+					"-larsal",
+					"-larstream",
+					"-larstream2",
+					"-larmavlink",
+					"-ljson",
+					"-larmedia",
+					"-larutils",
+					"-lcurl",
+					"-lardatatransfer",
+					"-lmux",
+					"-lpomp",
+					"-lcrypto",
+					"-lssl",
+					"-lz",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ident.Tesis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tesis/Tesis-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
